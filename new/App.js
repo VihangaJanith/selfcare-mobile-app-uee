@@ -10,20 +10,23 @@ const Stack = createNativeStackNavigator();
 
 import CreateInquiry from './screens/CreateInquiry'
 import UsersList from './screens/UsersList'
-
 import UserDetailScreen from './screens/UserDetailScreen';
+<<<<<<< HEAD
 import Register from './screens/Users/Register';
 import Login from './screens/Users/Login';
 import Example from './screens/Users/Example';
+=======
+import AssignTeamScreen from './screens/Technical/AssignTeamScreen';
+import AssignTaskScreen from './screens/Technical/AssignTaskScreen';
+import AllTeamsScreen from './screens/Technical/AllTeamsScreen';
+import EditTaskScreen from './screens/Technical/EditTaskScreen';
+>>>>>>> fe5cb7e9a648c685a89bc08690509307a1bce70c
 
 
 function MyStack(){
   return (
-  
-
-
-
       <Stack.Navigator>
+<<<<<<< HEAD
         {/* <Stack.Screen name="Example" component={Example} options={{ title: 'ex' }} /> */}
 <Stack.Screen name="CreateInquiry" component={CreateInquiry}/> 
 
@@ -73,12 +76,14 @@ function MyStack(){
       
       
       <Stack.Screen name="UserDetailScreen" component={UserDetailScreen}/> 
+=======
+        <Stack.Screen name="AssignTeamScreen" component={AssignTeamScreen}/>
+        <Stack.Screen name="AssignTaskScreen" component={AssignTaskScreen}/>
+        <Stack.Screen name="AllTeamsScreen" component={AllTeamsScreen}/>
+        <Stack.Screen name="EditTaskScreen" component={EditTaskScreen}/>
+>>>>>>> fe5cb7e9a648c685a89bc08690509307a1bce70c
       </Stack.Navigator>
-  
-
-
   )
-
 }
 
 const styles = StyleSheet.create({
@@ -105,12 +110,6 @@ const styles = StyleSheet.create({
 
 export default function App() {
   
-  
-
-
- 
- 
-
   return (
 
 
@@ -126,4 +125,6 @@ export default function App() {
     
 
 }
-
+//<Stack.Screen name="UsersList" component={UsersList}/> 
+//<Stack.Screen name="CreateUserScreen" component={CreateUserScreen}/> 
+//<Stack.Screen name="UserDetailScreen" component={UserDetailScreen}/> 
