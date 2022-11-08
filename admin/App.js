@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 import CreateInquiry from './screens/CreateInquiry'
 import UsersList from './screens/UsersList'
 
-import UserDetailScreen from './screens/UserDetailScreen';
+import AdminResponse from './screens/AdminResponse';
 import Register from './screens/Users/Register';
 import Login from './screens/Users/Login';
 import Example from './screens/Users/Example';
@@ -24,8 +24,12 @@ function MyStack(){
 
 
       <Stack.Navigator>
+                        <Stack.Screen name="UsersList" component={UsersList}/> 
+
+                        <Stack.Screen name="CreateInquiry" component={CreateInquiry}/> 
+        <Stack.Screen name="AdminResponse" component={AdminResponse}/> 
         {/* <Stack.Screen name="Example" component={Example} options={{ title: 'ex' }} /> */}
-<Stack.Screen name="CreateInquiry" component={CreateInquiry}/> 
+
 
 
         <Stack.Screen name="Login" component={Login} 
@@ -66,13 +70,12 @@ function MyStack(){
         
         />
         <Stack.Screen name="Register" component={Register} options={{title: 'Reg'}} />
-                <Stack.Screen name="UsersList" component={UsersList}/> 
 
       
 
       
       
-      <Stack.Screen name="UserDetailScreen" component={UserDetailScreen}/> 
+      
       </Stack.Navigator>
   
 

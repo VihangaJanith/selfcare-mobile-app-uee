@@ -5,6 +5,7 @@ const cors = require('cors');
 const {dbConnection} = require('./db/dbCon')
 // const studentRouter = require('./routes/studentRoutes')
 const inquiryRouter = require('./routes/inquiryRoute')
+const userRouter = require('./routes/userRoutes')
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 // app.use('/student', studentRouter)
 
 app.use('/inquiry', inquiryRouter)
+app.use('/user', userRouter)
 
 const PORT = 5000;
 

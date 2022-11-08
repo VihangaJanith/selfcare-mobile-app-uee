@@ -7,6 +7,8 @@ const UsersList = ({navigation}) => {
 
   const [bookings, setBookings] = useState();
   const [message, setMessage] = useState();
+  const [internetCheck, setInternetCheck] = useState(0);
+
     
 
   const onLoad = async () => {
@@ -36,7 +38,7 @@ const UsersList = ({navigation}) => {
 
 
 
-       },[navigation])
+       },[navigation, internetCheck])
 
        
         const deleteBooking = async (id) => {
@@ -67,7 +69,9 @@ const UsersList = ({navigation}) => {
     <ScrollView  >
     <View>
         
-      <Button title="Create Inquiry" onPress={()=> navigation.navigate('CreateInquiry')}></Button>        
+      <Button title="Create Inquiry" onPress={()=> navigation.navigate('CreateInquiry')}></Button>   
+      <Button title='Retry' onPress = {() => setInternetCheck(internetCheck + 1)} />        
+     
 
         </View>
 
@@ -77,16 +81,17 @@ const UsersList = ({navigation}) => {
         {bookings && bookings.map((booking , index) => (
             
             <ListItem key={index} bottomDivider
-            onPress={()=> navigation.navigate('UserDetailScreen', {
+            onPress={()=> navigation.navigate('AdminResponse', {
               inqId : booking._id
             })}
             >
-              
+             
               <ListItem.Chevron/>
               
               <ListItem.Content>
               
-              <ListItem.Title>{booking.inquiry}</ListItem.Title>
+              
+              {booking.inquiry.substring(0,16) < booking.inquiry ? <ListItem.Title>{booking.inquiry.substring(0,16)}......</ListItem.Title> : <ListItem.Title>{booking.inquiry.substring(0,16)}</ListItem.Title> }
               <ListItem.Subtitle>{booking.name}</ListItem.Subtitle>
               <ListItem.Subtitle>{booking.email}</ListItem.Subtitle>
 
@@ -94,7 +99,8 @@ const UsersList = ({navigation}) => {
              
 
               </ListItem.Content>
-             {booking.createdAt.toString() === booking.updatedAt.toString() ? ( <Badge value={"Edited"} status="success" />) : ( <Badge value={"Not edited"} status="error" />)}
+           
+             {/* {booking.createdAt.toString() === booking.updatedAt.toString() ? ( <Badge value={"Edited"} status="success" />) : ( <Badge value={"Not edited"} status="error" />)} */}
              {booking.reply === "Our team will contact you soon" ? ( <Badge value={"Not Replyed"} status="error" />) : ( <Badge value={"Replyed"} status="success" />)}
 
               {/* <Button title="Delete" onPress={()=> deleteBooking(booking._id)}></Button> */}
