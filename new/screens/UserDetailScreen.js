@@ -23,7 +23,7 @@ const UserDetailScreen = (props) => {
 
 
   useEffect(() => {
-      axios.get(`http://192.168.8.113:5000/inquiry/${id}`).then((res) => {
+      axios.get(`http://192.168.1.200:5000/inquiry/${id}`).then((res) => {
           console.log(res.data)
           setName(res.data.name)
           setEmail(res.data.email)
@@ -42,7 +42,7 @@ const UserDetailScreen = (props) => {
         inquiry,
         
     }
-    axios.put(`http://192.168.8.113:5000/inquiry/edit/${id}`, inquiries)
+    axios.put(`http://192.168.1.200:5000/inquiry/edit/${id}`, inquiries)
     alert("Data Updated successfully")
     props.navigation.navigate('UsersList')
     } catch (error) {

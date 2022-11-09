@@ -5,7 +5,8 @@ const cors = require('cors');
 const {dbConnection} = require('./db/dbCon')
 // const studentRouter = require('./routes/studentRoutes')
 const inquiryRouter = require('./routes/inquiryRoute')
-
+const meterReadingRouter = require('./routes/meaterReading')
+const customerRouter = require('./routes/customerRoute')
 const app = express();
 
 app.use(express.json())
@@ -15,7 +16,8 @@ app.use(cors());
 // app.use('/student', studentRouter)
 
 app.use('/inquiry', inquiryRouter)
-
+app.use('/meter', meterReadingRouter)
+app.use('/customer', customerRouter)
 const PORT = 5000;
 
 app.listen(PORT, ()=>{

@@ -26,13 +26,13 @@ const CreateUserScreen = ({navigation}) => {
         inquiry,
       };
       await axios
-        .post("http://192.168.8.113:5000/inquiry/add", data)
+        .post("http://192.168.1.200:5000/inquiry/add", data)
         .then((res) => {
           console.log(res.data);
         });
         alert("User Created Successfully");
 
-        await axios.get('http://192.168.8.113:5000/inquiry/')
+        await axios.get('http://192.168.1.200:5000/inquiry/')
 
         navigation.navigate("UsersList");
     }

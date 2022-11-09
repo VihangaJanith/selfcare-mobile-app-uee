@@ -10,7 +10,7 @@ const UsersList = ({navigation}) => {
 
   const onLoad = async () => {
 
-    const place_ref = await  axios.get('http://192.168.8.113:5000/inquiry/').then(res => {
+    const place_ref = await  axios.get('http://192.168.1.200:5000/inquiry/').then(res => {
       setBookings(res.data)    
      })
      
@@ -19,7 +19,7 @@ const UsersList = ({navigation}) => {
 
 
     useEffect(() => {
-           axios.get('http://192.168.8.113:5000/inquiry/').then(res => {
+           axios.get('http://192.168.1.200:5000/inquiry/').then(res => {
             setBookings(res.data)    
            })
 
