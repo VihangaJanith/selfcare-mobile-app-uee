@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 
-const CreateUserScreen = ({navigation}) => {
+const CreateInquiry = ({navigation}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [inquiry, setInquiry] = useState("");
@@ -87,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateUserScreen;
+export default CreateInquiry;
