@@ -20,13 +20,9 @@ const UsersList = ({navigation}) => {
 
 
     useEffect(() => {
-<<<<<<< HEAD
-           axios.get('http://192.168.1.200:5000/inquiry/').then(res => {
-=======
       onLoad();
 
            axios.get('http://192.168.8.113:5000/inquiry/').then(res => {
->>>>>>> b5a2f3454e11d6bf69918769108e3f90fe4af5b4
             setBookings(res.data)    
            })
 
